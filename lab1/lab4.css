@@ -1,0 +1,32 @@
+h1 {
+  color:  green;
+}
+table {
+  border-style: solid;
+margin: auto;}
+td:first-child {
+  color: black;
+  font-variant: small-caps;
+ }
+td:first-child + td {
+ font-weight: bold;
+ font-variant: small-caps;
+}
+td:first-child + td + td {
+  font-style: italic;
+}
+td:first-child + td + td + td {
+/*font-size: .7em;*/
+}
+td:first-child + td + td + td + td::before{
+  content: "- ";
+}
+td:first-child + td + td + td + td{
+  /*font-size: .7em;*/
+}
+tr:nth-child(2) td:nth-child(1){
+  color: green  ;
+}
+tr + tr + tr + tr + tr + tr + tr{
+  font-size: .7em ;
+}

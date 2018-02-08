@@ -1,0 +1,96 @@
+{
+  "Playlist": {
+    "Song": [
+      {
+        "TrackName": "Sandstorm",
+        "Arist": "Darude",
+        "Album": "Sandstorm",
+        "Date": "26 October 1999",
+        "Genre": "Electronic",
+        "Website": "http://darude.com",
+        "Cover": {
+          "html": {
+            "-xmlns": "http://www.w3.org/1999/xhtml",
+            "img": {
+              "-src": "https://s14-eu5.ixquick.com/wikioimage/98ccc2996880a436b6944fe387c52fc0.jpg",
+              "-height": "200",
+              "-width": "200"
+            }
+          }
+        }
+      },
+      {
+        "TrackName": "Anvil",
+        "Arist": "Lorn",
+        "Album": "Vessle",
+        "Date": "2016",
+        "Genre": "Glitch",
+        "Website": "NoneSadly",
+        "Cover": {
+          "html": {
+            "-xmlns": "http://www.w3.org/1999/xhtml",
+            "img": {
+              "-src": "https://img.youtube.com/vi/zqkD9PpH8W8/0.jpg",
+              "-height": "200",
+              "-width": "200"
+            }
+          }
+        }
+      },
+      {
+        "TrackName": "Life Goes On ",
+        "Arist": "2pac",
+        "Album": "All Eyez On Me",
+        "Date": "1996",
+        "Genre": "Rap",
+        "Website": "http://2pac.com",
+        "Cover": {
+          "html": {
+            "-xmlns": "http://www.w3.org/1999/xhtml",
+            "img": {
+              "-src": "https://s14-eu5.ixquick.com/wikioimage/16487d073596775102d88037bf4f9a31.jpg",
+              "-height": "200",
+              "-width": "200"
+            }
+          }
+        }
+      },
+      {
+        "TrackName": "Into The Sun",
+        "Arist": "Bassnectar",
+        "Album": "Into The Sun",
+        "Date": "2015",
+        "Genre": "Bassmusic",
+        "Website": "http://bassnectar.net",
+        "Cover": {
+          "html": {
+            "-xmlns": "http://www.w3.org/1999/xhtml",
+            "img": {
+              "-src": "https://upload.wikimedia.org/wikipedia/en/3/3d/Into_the_Sun_%28Bassnectar_album%29.jpg",
+              "-height": "200",
+              "-width": "200"
+            }
+          }
+        }
+      },
+      {
+        "TrackName": "Battery",
+        "Arist": "Metallica",
+        "Album": "Master Of Puppets",
+        "Date": "1996",
+        "Genre": "Metal",
+        "Website": "http://metallica.com",
+        "Cover": {
+          "html": {
+            "-xmlns": "http://www.w3.org/1999/xhtml",
+            "img": {
+              "-src": "https://upload.wikimedia.org/wikipedia/en/b/b2/Metallica_-_Master_of_Puppets_cover.jpg",
+              "-height": "200",
+              "-width": "200"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

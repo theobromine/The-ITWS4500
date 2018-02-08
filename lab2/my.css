@@ -1,0 +1,11 @@
+div.row {
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 60%);
+}
+html {
+font-family: "Comic Sans MS";
+}
+div#box {
+  border-style: dotted;
+  border-radius: 2;
+  margin: 1em;
+}

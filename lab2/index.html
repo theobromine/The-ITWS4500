@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id='wor'>Click the button to get your coordinates and send them to the darksky API</p>
+<p id="demo"></p>
+<div class="row">
+	<div class="col s4" id="now">
+		<h5>Your current weather:</h5>
+		<p id="current"></p>
+		<p id="ccondition"</p>
+		<p id="cuv"></p>
+		<p id="cwind"></p>
+		<p id="czone"></p>
+	</div>
+	<div class="col s7" id="later">
+		<h5 id="hrly"> Your future o.0 </h5>
+		<div id="hrs"> </div>
+		<!-- <div>Temperature: <p id="fcurrent"></p> </div>
+		<br>
+		<div>Condition: <p id="fcondition"</p> </div>
+		<div>UV Index: <p id="fuv"></p> </div>
+		<div>Wind Speed: <p id="fwind"></p> </div>
+		<div>Ozone: <p id="fzone"></p> </div> -->
+	</div>
+</div>
+<script>
+var x = document.getElementById("demo");
+var apikey = "8bbc985141685d5a7aa19631efae509c";
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+		//https://api.darksky.net/forecast/8bbc985141685d5a7aa19631efae509c/37.8267,-122.4233
+
+		var myCall = "https://api.darksky.net/forecast/"+apikey+"/"+ position.coords.latitude + ","+ position.coords.longitude;
+		var p = document.getElementById("current");
+		p.innerHTML = myCall;
+
+		$.ajax({
+		url: myCall,
+		data: {
+				format: 'json'
+		},
+		error: function (error) {
+				console.log(error);
+		},
+		dataType: 'jsonp',
+		headers: {
+				"Access-Control-Allow-Origin": "*"
+		},
+		success: function (data) {
+				// alert("success");
+				$('html,body').animate({
+				   scrollTop: $("#now").offset().top
+				});
+				console.log(data);
+				var temp = data.currently.temperature;
+				var cuv = data.currently.uvIndex;
+				var cwind = data.currently.windSpeed;
+				var czone = data.currently.ozone;
+				console.log(temp);
+				$("#current").text("Temperature: " + temp + " F");
+				$("#cuv").text("UV Index: " + cuv);
+				$("#cwind").text("WindSpeed: " + cwind);
+				$("#czone").text("Ozone: " + czone);
+
+				var condition = data.currently.summary;
+				console.log(condition);
+				$("#ccondition").text("Condition: " + condition);
+				getHourly(data.hourly);
+				$("#but").remove();
+				$("wor").text("Loaded:\n")
+		},
+
+		type: 'GET'
+});
+}
+function getHourly(data){
+	console.log("Here");
+	console.log(data);
+	$("#hrly").text(data.summary);
+	for (var i = 0; i < data.data.length; i++) {
+		var taco = "<div id='box'> ";
+		taco += i + " Hour(s) from now: <br>";
+		console.log(data);
+		var temp = data.data[i].temperature;
+		var cuv = data.data[i].uvIndex;
+		var cwind = data.data[i].windSpeed;
+		var czone = data.data[i].ozone;
+		taco += "Temperature: " + temp + " F<br>";
+		taco += "UV Index: " + cuv + "<br>" ;
+		taco += "WindSpeed: " + cwind + "<br>" ;
+		taco +="Ozone: " + czone + "<br>" ;
+		//
+		var condition = data.data[i].summary;
+		// console.log(condition);
+		taco += "Condition: " + condition + "<br> </div>" ;
+		$("#hrs").append(taco);
+	}
+}
+</script>
+<img src="https://darksky.net/dev/img/attribution/poweredby.png" alt="Powered by Dark Sky" style="height: 3.5rem;">
+
+<button onclick="getLocation()" id="but">Try It</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<link rel="stylesheet" type="text/css" href="my.css">
+
+
+</body>
+</html>
